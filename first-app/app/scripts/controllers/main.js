@@ -23,7 +23,7 @@ app.controller('MainCtrl', function ($scope) {
 });
 
 app.controller('BilletCtrl', function($scope) {
-	console.log('BilletCtrl okay');
+	$scope.todayDate = new Date();
 
 	$scope.articles = [
 		{'name' : 'Téléphone sans fil',
@@ -57,7 +57,7 @@ app.controller('BilletCtrl', function($scope) {
 
 });
 
-app.controller("DirectivesCtrl", function($scope){
+app.controller("DirectivesCtrl", function($scope, factoryExample, sericeExample){
     $scope.expanders = [
         {title: 'Titre 1',
          text: 'Contenu 1'},
@@ -66,6 +66,9 @@ app.controller("DirectivesCtrl", function($scope){
         {title: 'Titre 3',
          text: 'Contenu 3'}
     ];
+    $scope.var1 = factoryExample.service1();
+    $scope.var2 = sericeExample.service2();
+    console.log($scope.var1);
 });
 
 app.directive("accordeon", function(){
@@ -110,4 +113,18 @@ app.directive("expander", function(){
             };
         }
     };
+});
+
+app.factory('factoryExample', function() {
+    return{
+        service1: function(){
+            return 'Service impaire : Okay !';
+        }
+    }
+});
+
+app.service('sericeExample', function() {
+    this.service2 = function() {
+        return 'Service paire : Okay !';
+    }
 });
