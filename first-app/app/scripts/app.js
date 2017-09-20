@@ -24,7 +24,10 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/views/directives', {
-        templateUrl: 'directives.html'
-      }); 
+      .when('/directives', {
+        templateUrl: 'views/directives.html',
+        controller: 'MainCtrl',
+        controllerAs: 'main'
+      })
+      .otherwise({redirectTo: 'url'}); 
   });
