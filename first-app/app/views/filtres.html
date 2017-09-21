@@ -1,0 +1,22 @@
+<h1>Bienvenu dans la partie 'filtres'</h1>
+
+<div ng-controller="BilletCtrl">
+    <h3>Commande du {{ todayDate | date : 'dd MMM yyyy à hh'}}h{{ todayDate | date : 'm'}} :</h3>
+    <div ng-repeat="article in articles" style="margin-bottom: 25px;">
+        <label>{{article.name}} :</label>
+        <input ng-model="article.quantity" class="form-control">
+        <input ng-model="article.price" class="form-control">
+    </div>
+    <div>
+        <label>Facture totale :</label>
+        <span>{{ total() | currency: "€ " : 2 }}</span>
+    </div>
+    <div>
+        <label>Réduction :</label>
+        <span>{{ discount | currency : "€ " : 2 }}</span>
+    </div>
+    <div>
+        <label>Facture après réduction :</label>
+        <span>{{ finalTotal() | currency : "€ " : 2 }}</span>
+    </div>
+</div>

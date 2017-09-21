@@ -25,9 +25,13 @@ angular
         controllerAs: 'main'
       })
       .when('/directives', {
-        templateUrl: 'views/directives.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        templateUrl: 'views/directives.html'
+      })
+      .when('/filtres', {
+        templateUrl: 'views/filtres.html'
+      })
+      .when('/infinity', {
+        templateUrl: 'views/infinity.html'
       })
       .otherwise({redirectTo: 'url'}); 
   });

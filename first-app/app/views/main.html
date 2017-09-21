@@ -1,42 +1,7 @@
-<div ng-controller="DirectivesCtrl">
-    <accordeon>
-        <expander expander-title="expander.title" ng-repeat="expander in expanders">
-        {{expander.text}}<br>
-        <span ng-if='$index%2 == 0'>
-            {{ var1 }}
-        </span>
-        <span ng-if='$index%2 != 0'>
-            {{ var2 }}
-        </span>
-        </expander>
-    </accordeon>
-</div>
-
 <input type="text" placeholder="Name..." ng-model="name" class="form-control" style="margin-bottom: 5px;">
 <div class="jumbotron">
     <h1>Hello {{name}} !</h1>
     <img src="images/yeoman.png" alt="I'm Yeoman">
-</div>
-
-<div ng-controller="BilletCtrl">
-    <h3>Commande du {{ todayDate | date : 'dd MMM yyyy à hh'}}h{{ todayDate | date : 'm'}} :</h3>
-    <div ng-repeat="article in articles" style="margin-bottom: 25px;">
-        <label>{{article.name}} :</label>
-        <input ng-model="article.quantity" class="form-control">
-        <input ng-model="article.price" class="form-control">
-    </div>
-    <div>
-    	<label>Facture totale :</label>
-    	<span>{{total() | currency:"€":2}}</span>
-    </div>
-    <div>
-    	<label>Réduction :</label>
-    	<span>{{discount | currency:"€":2}}</span>
-    </div>
-    <div>
-    	<label>Facture après réduction :</label>
-    	<span>{{finalTotal() | currency:"€":2}}</span>
-    </div>
 </div>
 
 <div class="row marketing">
