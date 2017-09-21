@@ -1,7 +1,7 @@
-<h1>Bienvenu dans la partie 'filtres'</h1>
+<h1>Bienvenue dans la partie 'filtres'</h1>
 
 <div ng-controller="BilletCtrl">
-    <h3>Commande du {{ todayDate | date : 'dd MMM yyyy à hh'}}h{{ todayDate | date : 'm'}} :</h3>
+    <h3>Commande du {{ todayDate | date : 'dd MMM yyyy à HH'}}h{{ todayDate | date : 'mm'}} :</h3>
     <div ng-repeat="article in articles" style="margin-bottom: 25px;">
         <label>{{article.name}} :</label>
         <input ng-model="article.quantity" class="form-control">

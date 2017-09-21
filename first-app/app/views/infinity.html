@@ -1,2 +1,8 @@
-<h1>Bienvenue dans la partir 'infinity scrolling'</h1>
+<h1>Bienvenue dans la partie 'infinity scrolling'</h1>
 
+
+<div ng-controller="infinityCtrl">
+	<div infinite-scroll="loadMore()" infinite-scroll-distance="2">
+		<img ng-repeat="img in images" ng-src="http://placehold.it/225x250&text={{img}}" style="padding: 5px;">
+	</div>
+</div>

@@ -37,7 +37,7 @@ app.controller('BilletCtrl', function($scope) {
 
 
 	$scope.total = function() {
-		console.log('function total okay')
+		console.log('function total okay');
 		var total = 0;
 		for (var i = 0; i < $scope.articles.length; i++) {
 			total += $scope.articles[i].price * $scope.articles[i].quantity;
@@ -81,7 +81,7 @@ app.directive("accordeon", function(){
             var expanders = [];
             this.gotOpened = function(selectedExpander){
                 expanders.forEach(function(expander){
-                    if(selectedExpander != expander){
+                    if(selectedExpander !== expander){
                         expander.showMe = false;
                     }
                 });
@@ -116,15 +116,33 @@ app.directive("expander", function(){
 });
 
 app.factory('factoryExample', function() {
-    return{
+    return {
         service1: function(){
             return 'Service impaire : Okay !';
         }
-    }
+    };
 });
 
 app.service('sericeExample', function() {
     this.service2 = function() {
         return 'Service paire : Okay !';
-    }
+    };
+});
+
+app.controller('infinityCtrl', function($scope) {
+    $scope.images = [1, 2, 3, 4, 5, 6];
+
+    console.log("infinityCtrl okay ! [ep. 1]");
+    
+    $scope.loadMore = function () {
+        var last = $scope.images[$scope.images.length - 1];
+
+        console.log("infinityCtrl okay ! loadMore okay");
+        
+        for (var i = 1; i <= 6; i++) {
+            $scope.images.push(last + i);
+        }
+    };
+    
+    console.log("infinityCtrl okay ! [ep. 2]");
 });
